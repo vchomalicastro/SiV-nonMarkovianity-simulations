@@ -17,9 +17,9 @@ Specifically, this code generates the results for the non-Markovianity heatmaps 
 
 ## Repository Structure
 
-- `nblp_nonHPC_version.py` — Adapted simulation code for non-supercomputer environments (locally parallelized through `joblib`, not split into multiple files).
-- `heatmap_generator_bz_0_2e5_bx_0_2e5_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e5] (Figure 4(a)).
-- `heatmap_generator_bz_0_2e6_bx_0_2e6_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e6] (Figure 4(b)).
+- `NBLP_nonHPC_version.py` — Adapted simulation code for non-supercomputer environments.
+- `heatmap_generator_Bz_0_2e5_Bx_0_2e5_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e5] (Figure 4(a)).
+- `heatmap_generator_Bz_0_2e6_Bx_0_2e6_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e6] (Figure 4(b)).
 - `README.txt` — This file.
 - `LICENSE` — MIT License text.
 
