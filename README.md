@@ -5,32 +5,45 @@ Numerical simulations of phonon-induced non-Markovianity in silicon-vacancy (SiV
 
 ## Overview
 
-This repository contains Python codes for simulating memory effects and non-Markovian dynamics in a single solid-state spin (the negatively charged silicon-vacancy SiV– center in diamond). Specifically, these were the codes used to generate results from the above paper, including both the effective Rabi model (Section 3.1) and the four-level system with transverse field (Section 3.2 and Appendix D).
+This repository contains Python code for simulating memory effects and non-Markovian dynamics in a single solid-state spin (the negatively charged silicon-vacancy SiV– center in diamond).  
+Specifically, this code generates the results for the non-Markovianity heatmaps in Section 3.2 (and Appendix D) of the above paper.
 
 ## Paper
 
 - **Title:** Phonon-induced non-equilibrium dynamics of a single solid-state spin
 - **Authors:** Ariel Norambuena, Diego Tancara, Vicente Chomali-Castro, Daniel Castillo
 - **Year:** 2024
+- **arXiv:** [arxiv.org/abs/2411.09825](arxiv.org/abs/2411.09825)
 
 ## Repository Structure
 
-- `blp_measure/` — Code to compute the BLP non-Markovianity measure as explained in Appendix D; this generates the results of Section 3.2.
-- `rabi_model/` — Code for the effective Rabi model (Section 3.1), if included.
-- `data/` — Example input data and simulation outputs.
+- `nblp_nonHPC_version.py` — Adapted simulation code for non-supercomputer environments (locally parallelized through `joblib`, not split into multiple files).
+- `heatmap_generator_bz_0_2e5_bx_0_2e5_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e5] (Figure 4(a)).
+- `heatmap_generator_bz_0_2e6_bx_0_2e6_builtin_data.py` — Heatmap generator script with built-in data for the range [0, 2e6] (Figure 4(b)).
 - `README.txt` — This file.
 - `LICENSE` — MIT License text.
+
+## About the Code and Data
+
+The original simulations for Section 3.2 of the paper (with the computational implementation explained in Appendix D) were run in parallel across 40 separate scripts (e.g., 1.py, 2.py, ..., 40.py), each covering a different region of the $(B_x, B_z)$ parameter space to compute the full non-Markovianity $\mathcal{N}_{\rm BLP}(B_x, B_z)$ heatmap.
+
+This repository includes:
+- An **adapted version** of the simulation code (`nblp_nonHPC_version.py`) for running on standard desktop/laptop environments (locally parallelized through `joblib`, but not split into multiple files).
+- **Heatmap generator scripts** with **built-in data** (`heatmap_generator_bz_0_2e5_bx_0_2e5_builtin_data.py` and `heatmap_generator_bz_0_2e6_bx_0_2e6_builtin_data.py`).  
+  These scripts use the *actual data* produced by our simulations ran in the Illinois Campus Cluster high-performance environment, under the Illinois Computes program, as reported in the paper, and allow users to regenerate the heatmaps directly or analyze the data in general.
+
+All necessary data for reproducing the published figures is included, so users do **not** need access to a supercomputer to reproduce the main results.
 
 ## Installation
 
 This code requires Python 3.8+ and the following packages:
 
-- numpy
-- scipy
-- matplotlib
-- seaborn
-- qutip
-- joblib
+- `numpy`
+- `scipy`
+- `matplotlib`
+- `seaborn`
+- `qutip`
+- `joblib`
 
 Install dependencies with:
 
@@ -39,3 +52,4 @@ Install dependencies with:
 Or with conda:
 
     conda install numpy scipy matplotlib seaborn qutip joblib
+
