@@ -271,8 +271,8 @@ NB = 71
 # and y = 0, and therefore, again, NB must be odd.
 # Execution time scales as NB^2.
 
-#Figure 4(a) uses ranges: 0, 2.0 * 1e+6
-#Figure 4(b) uses ranges: 0, 2.0 * 1e+5
+#Figure 4(a) uses ranges: 0, 2.0 * 1e+2
+#Figure 4(b) uses ranges: 0, 2.0 * 1e+1
 Bxi, Bxf = 0, 2.0 * 1e+6
 Bzi, Bzf = 0, 2.0 * 1e+6
 Bx_values = np.linspace(Bxi, Bxf, NB)
