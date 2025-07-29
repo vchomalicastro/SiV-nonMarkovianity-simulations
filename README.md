@@ -13,7 +13,7 @@ Specifically, this code generates the results for the non-Markovianity heatmaps 
 - **Title:** Phonon-induced non-equilibrium dynamics in a single solid-state spin
 - **Authors:** Ariel Norambuena, Diego Tancara, Vicente Chomali-Castro, Daniel Castillo
 - **Year:** 2025
-- **DOI:** [iopscience.iop.org/article/10.1088/2058-9565/adf092](10.1088/2058-9565/adf092)
+- **DOI:** [10.1088/2058-9565/adf092](iopscience.iop.org/article/10.1088/2058-9565/adf092)
 
 ## Repository Structure
 
